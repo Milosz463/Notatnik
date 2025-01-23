@@ -1,0 +1,44 @@
+<Window x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            
+            <MenuItem Header="_Plik">
+                <MenuItem Header="Nowy" Click="Nowy"/>
+                <MenuItem Header="Otworz" Click="Otworz"/>
+                <MenuItem Header="Zapisz" Click="Zapisz"/>
+                <MenuItem Header="Zapisz jako" Click="ZapiszJako"/>
+                <MenuItem Header="Zamknij" Click="Zamknij"/>
+            </MenuItem>
+
+            <MenuItem Header="E_dycja">
+                <MenuItem Header="Kopiuj"
+                          Command="ApplicationCommands.Copy"/>
+                <MenuItem Header="Wytnij"
+                          Command="ApplicationCommands.Cut"/>
+                <MenuItem Header="Wklej"
+                          Command="ApplicationCommands.Paste"/>
+                <MenuItem Header="Cofnij"
+                          Command="ApplicationCommands.Undo"/>
+            </MenuItem>
+            
+            <MenuItem Header="F_ormat"/>
+            <!--Podloga wybieramy ktory znak +alt bedzie uruchamial skrotem klawiszowym menu-->
+
+            <MenuItem Header="I_nfo">
+                <MenuItem Header="Informacje o aplikacji" Click="OAplikacji"/>
+                <MenuItem Header="Informacje o autorze" Click="OAutorze"/>
+            </MenuItem>
+        </Menu>
+        <TextBox x:Name="WpisanyText"
+                 AcceptsReturn="True"
+                 TextWrapping="WrapWithOverflow"
+                 VerticalScrollBarVisibility="Auto"></TextBox>
+    </DockPanel>
+</Window>
